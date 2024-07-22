@@ -1,0 +1,62 @@
+Conclusiones del Ejercicio de Pruebas Automatizadas
+Repositorio de pruebas https://github.com/cmauriciocarrillo/TestDemoBlaze
+
+1. Resumen de Pruebas
+El código proporcionado realiza pruebas automatizadas utilizando Cypress en dos contextos: API y Web. Las pruebas están diseñadas para verificar la creación y autenticación de usuarios tanto en una API como en una interfaz web.
+
+2. Pruebas en API
+Paso 1: Creación de un nuevo usuario en signup API
+Objetivo: Verificar que un nuevo usuario se pueda crear en la API.
+Hallazgos:
+La prueba se ejecutó con éxito si el estado de respuesta es 200 y no se devuelve un mensaje de error.
+Si se devuelve un mensaje de error, la prueba indica un fallo en la creación del usuario.
+Conclusión: La API permite la creación de nuevos usuarios cuando las credenciales son válidas.
+Paso 2: Intento de creación de usuario ya existente en API
+Objetivo: Verificar que la API maneje correctamente los intentos de crear un usuario que ya existe.
+Hallazgos:
+La prueba se ejecuta con éxito si se devuelve un mensaje de error adecuado indicando que el usuario ya existe.
+Si no se recibe un mensaje de error, indica que la API ha creado el usuario a pesar de que ya existía.
+Conclusión: La API debe manejar los errores de usuarios existentes y no permitir la creación de duplicados.
+Paso 3: Ingreso de usuario y password correcto en login API
+Objetivo: Verificar que un usuario pueda iniciar sesión con credenciales correctas.
+Hallazgos:
+La prueba se ejecuta con éxito si el estado de respuesta es 200 y se recibe un token de autenticación.
+Si no se recibe un token o se devuelve un error, indica un fallo en el inicio de sesión.
+Conclusión: La API autentica correctamente a los usuarios con credenciales válidas.
+Paso 4: Ingreso de usuario y password incorrecto en login API
+Objetivo: Verificar que la API maneje correctamente los intentos de inicio de sesión con credenciales incorrectas.
+Hallazgos:
+La prueba se ejecuta con éxito si se recibe un mensaje de error indicando credenciales incorrectas.
+Si no se recibe un mensaje de error, indica que la API puede estar permitiendo el acceso no autorizado.
+Conclusión: La API debe manejar adecuadamente los intentos de inicio de sesión con credenciales incorrectas.
+
+3. Pruebas en la Interfaz Web
+Paso 1: Creación de un nuevo usuario en signup WEB
+Objetivo: Verificar que un nuevo usuario pueda ser creado a través de la interfaz web.
+Hallazgos:
+La prueba simula la interacción del usuario con la interfaz web para crear un nuevo usuario.
+No se proporciona una verificación de éxito, ya que depende de la interfaz web para mostrar los resultados.
+Conclusión: La interfaz web debe permitir la creación de nuevos usuarios y debe ser probada con casos de uso similares.
+Paso 2: Creación de una cuenta que ya existe en WEB
+Objetivo: Verificar que la interfaz web maneje correctamente los intentos de crear una cuenta que ya existe.
+Hallazgos:
+La prueba simula la interacción del usuario con la interfaz web para intentar crear una cuenta existente.
+La prueba no verifica el resultado de la interfaz web, por lo que es necesario observar el comportamiento manualmente.
+Conclusión: La interfaz web debe manejar adecuadamente los errores de usuarios existentes.
+Paso 3: Ingreso de usuario y password correcto en login WEB
+Objetivo: Verificar que un usuario pueda iniciar sesión con credenciales correctas a través de la interfaz web.
+Hallazgos:
+La prueba simula el proceso de inicio de sesión con credenciales correctas.
+La verificación del éxito no se proporciona en la prueba y debe ser observada manualmente.
+Conclusión: La interfaz web debe autenticar correctamente a los usuarios con credenciales válidas.
+Paso 4: Ingreso de usuario y password incorrecto en login WEB
+Objetivo: Verificar que la interfaz web maneje correctamente los intentos de inicio de sesión con credenciales incorrectas.
+Hallazgos:
+La prueba simula el proceso de inicio de sesión con credenciales incorrectas.
+La prueba no incluye una verificación directa del error y debe observarse el resultado manualmente.
+Conclusión: La interfaz web debe manejar adecuadamente los intentos de inicio de sesión fallidos.
+
+4. Recomendaciones
+Automatización de Resultados: Para una mayor robustez, las pruebas deberían incluir verificaciones explícitas de los resultados esperados en ambas versiones (API y Web) en lugar de depender de la observación manual.
+Manejo de Errores: Asegúrate de manejar adecuadamente los mensajes de error para proporcionar retroalimentación útil durante las pruebas.
+Revisión y Mantenimiento: Revisar y actualizar las pruebas regularmente para reflejar cambios en la API y la interfaz web, y para mejorar la cobertura de pruebas.
